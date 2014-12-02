@@ -14,7 +14,7 @@
 	
 	// Init App
 	var app = new Framework7({
-		modalTitle: 'HackerNews7',
+		modalTitle: '杨凌视线',
 		animateNavBackIcon: true,
 		precompileTemplates: true,
 		template7Pages: true,
@@ -90,7 +90,7 @@
 	function getStories(refresh) {
 		var results = refresh ? [] : JSON.parse(window.localStorage.getItem('stories')) || [];
 		if (results.length === 0) {		
-			if (!refresh) app.showPreloader('Loading top stories : <span class="preloader-progress">0</span> %');
+			if (!refresh) app.showPreloader('更新信息 : <span class="preloader-progress">0</span> %');
 			var storiesCount = 0;
 			hnapi.topStories(function (data) {
 				data = JSON.parse(data);
@@ -101,7 +101,7 @@
 						results[index] = data;
 						storiesCount++;
 						$$('.preloader-progress').text(Math.floor(storiesCount/100*100));
-						if (results.length === 100) {
+						if (results.length === 30) {
 							if (!refresh) app.hidePreloader();
 							// Update local storage data
 							window.localStorage.setItem('stories', JSON.stringify(results));

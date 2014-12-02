@@ -1,26 +1,19 @@
 {
-  "name": "HackerNews7",
+  "name": "杨凌视线",
   "version": "0.0.1",
-  "description": "Framework7 HackerNews web app",
+  "description": "杨凌视线客户端",
   "main": "index.html",
-  "repository": {
-    "type": "git",
-    "url": "https://guillaumebiton.github.com/HackerNews7.git"
-  },
   "keywords": [
-    "Hackernews",
-    "Framework7",
-    "webapp",
-    "html5"
+    "杨凌视线",
+    "杨凌艾特网络科技有限公司",
+    "艾特",
+    "杨凌电视台"
   ],
-  "author": "guillaumebiton <guillaume.biton@free.fr>",
+  "author": "luoshuo <m@Luoshuo.com>",
   "license": [
-    "MIT"
+    "copyright"
   ],
-  "bugs": {
-    "url": "https://guillaumebiton.github.com/HackerNews7/issues"
-  },
-  "homepage": "https://guillaumebiton.github.com/HackerNews7",
+  "homepage": "http://www.yanglingtv.com",
   "engines": {
     "node": ">= 0.10.0"
   },

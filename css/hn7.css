@@ -21,6 +21,7 @@ a {
 .stories-list .item-title {
 	font-weight: normal;
     color: #006699;
+    white-space: normal;
 }
 .stories-list .item-subtitle {
 	font-size: 14px;

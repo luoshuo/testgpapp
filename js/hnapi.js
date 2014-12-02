@@ -2,8 +2,7 @@
   'use strict';
   
   var urls = [
-    //https://hacker-news.firebaseio.com/v0/'
-      'http://localhost/aiteoa/cms/api/'
+      'http://www.yanglingtv.com/index.php/cms/api/'
   ];
   
   var req = function (path, success, error, retry) {
