@@ -15,92 +15,175 @@
 		<link rel="stylesheet" href="lib/framework7.css">
 		<link rel="stylesheet" href="css/hn7.css">
 	</head>
-	<body>
-		<!-- Status bar overlay for fullscreen mode -->
-		<div class="statusbar-overlay"></div>
-		
-		<!-- views -->
-		<div class="views">
-			<!-- Put panels-overlay and left-panel with view inside of views-->
-	      	<!-- Panels overlay-->
-	      	<div class="panel-overlay"></div>
-	      	<!-- Left panel with reveal effect-->
-	      	<div class="panel panel-left panel-cover">
-		        <!-- Left view-->
-		        <div class="view view-left navbar-through">
-		            <div class="navbar theme-white">
-			            <div class="navbar-inner">
-							<div class="left"><a href="#" class="link icon-only refresh-link refresh-home"><i class="icon icon-refresh"></i></a></div>
-							<div class="center sliding">
-								<span class="mobile-title">杨凌视线</span>
-								<span class="tablet-title">头条</span>
-							</div>
-						</div>
-		          	</div>
-		          	<div class="pages">
-			            <div class="page" data-page="index">
-							<!-- Search bar -->
-							<!--<form class="searchbar" data-search-list=".list-block-search" data-search-in=".item-title" data-searchbar-found=".searchbar-found" data-searchbar-not-found=".searchbar-not-found">
-									<div class="searchbar-input">
-										<input type="search" placeholder="搜索">
-										<a href="#" class="searchbar-clear"></a>
-									</div>
-									<a href="#" class="searchbar-cancel">取消</a>
-							</form>-->
-							<div class="page-content pull-to-refresh-content">
-								<div class="pull-to-refresh-layer">
-									<div class="preloader"></div>
-									<div class="pull-to-refresh-arrow"></div>
-								</div>
+	<body class="theme-orange">
 
-								<!-- Search bar overlay-->
-								<div class="searchbar-overlay"></div>
-
-								<!-- no result -->
-								<div class="content-block searchbar-not-found">
-									没有结果
-								</div>
-
-								<div class="list-block media-list stories-list list-block-search searchbar-found"></div>
-							</div>
-						</div>
-		          	</div>
-                    <!-- Bottom Tabbar-->
-                    <div class="toolbar tabbar tabbar-labels">
-                        <div class="toolbar-inner">
-                            <a href="#view-1" class="tab-link active"> <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label">新闻</span></a>
-                            <a href="#agri" class="tab-link"><i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label">农业</span></a>
-                            <a href="#view-3" class="tab-link"> <i class="icon tabbar-demo-icon-3"><span class="badge bg-red">4</span></i><span class="tabbar-label">活动</span></a>
-                            <a href="#view-4" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">视频</span></a>
-                            <a href="#view-4" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">生活</span></a>
+        <div class="statusbar-overlay"></div>
+        <div class="panel-overlay"></div>
+        <div class="panel panel-left panel-reveal">
+            <div class="content-block">
+                <p>Left</p>
+            </div>
+        </div>
+        <div class="panel panel-right panel-cover">
+            <div class="content-block">
+                <p>Right</p>
+            </div>
+        </div>
+        <div class="views tabs toolbar-through">
+            <div id="index" class="view view-main tab active">
+                <div class="navbar theme-white">
+                    <div class="navbar-inner" data-page="index">
+                        <div class="center sliding">
+                            <span class="mobile-title">杨凌视线</span>
                         </div>
                     </div>
-                    <!-- /End of Bottom Toolbar-->
-		        </div>
-	    	</div>
-			<!-- main view -->
-			<div class="view view-main navbar-through">
-				<div class="navbar theme-white">
-					<div class="navbar-inner">
-						<div class="left">
-							<a href="#" class="link open-panel icon-only">
-								<i class="icon icon-bars"></i>
-							</a>
-						</div>
-						<div class="center">杨凌视线</div>
-					</div>
-				</div>
-				<div class="pages">
-					<div class="page" data-page="main">
-						<div class="choose-story">
-							<a href="#" class="open-panel">选择栏目</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="index" class="page">
+                            <!-- Search bar -->
+                            <!--<form class="searchbar" data-search-list=".list-block-search" data-search-in=".item-title" data-searchbar-found=".searchbar-found" data-searchbar-not-found=".searchbar-not-found">
+                                    <div class="searchbar-input">
+                                        <input type="search" placeholder="搜索">
+                                        <a href="#" class="searchbar-clear"></a>
+                                    </div>
+                                    <a href="#" class="searchbar-cancel">取消</a>
+                            </form>-->
+                            <div class="page-content "><!--pull-to-refresh-content-->
+                              <!--  <div class="pull-to-refresh-layer">
+                                    <div class="preloader"></div>
+                                    <div class="pull-to-refresh-arrow"></div>
+                                </div>-->
+
+                                <!-- Search bar overlay-->
+                                <div class="searchbar-overlay"></div>
+
+                                <!-- no result -->
+                                <div class="content-block searchbar-not-found">
+                                    没有结果
+                                </div>
+
+                                <div class="list-block media-list topnews-list list-block-search searchbar-found"></div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div id="news" class="view tab">
+                <div class="navbar theme-white">
+                    <div class="navbar-inner" data-page="index">
+                        <div class="center sliding">
+                            <span class="mobile-title">新闻</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="news" class="page">
+                        <div class="page-content">
+                            <div class="list-block media-list news-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Second view (for second wrap)-->
+            <div id="agri" class="view tab">
+                <div class="navbar theme-white">
+                    <div class="navbar-inner" data-page="agri">
+                        <div class="center sliding">
+                            <span class="mobile-title">农业</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="agri" class="page">
+                        <div class="page-content">
+                            <div class="list-block media-list agri-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="huodong" class="view tab">
+                <div class="navbar theme-white">
+                    <div class="navbar-inner" data-page="about">
+                        <div class="center sliding">
+                            <span class="mobile-title">活动</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="huodong" class="page">
+                        <div class="page-content">
+                            <div class="list-block media-list huodong-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="media" class="view tab">
+                <div class="navbar theme-white">
+                    <div class="navbar-inner" data-page="about">
+                        <div class="center sliding">
+                            <span class="mobile-title">视频</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="media" class="page">
+                        <div class="page-content">
+                            <div class="list-block media-list media-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="life" class="view tab">
+                <div class="navbar theme-white">
+                    <div class="navbar-inner" data-page="about">
+                        <div class="center sliding">
+                            <span class="mobile-title">生活</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="pages navbar-through">
+                    <div data-page="life" class="page">
+                        <div class="page-content">
+                            <div class="list-block media-list life-list"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Tabbar-->
+            <div class="toolbar tabbar tabbar-labels">
+                <div class="toolbar-inner">
+                    <a href="#news" class="tab-link active"> <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label">新闻</span></a>
+                    <a href="#agri" class="tab-link"><i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label">农业</span></a>
+                    <a href="#huodong" class="tab-link"> <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label">活动</span></a>
+                    <a href="#media" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">视频</span></a>
+                    <a href="#life" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">生活</span></a>
+                </div>
+            </div>
+        </div>
+
+
 		
 		<!-- template7 templates -->
+        <script type="text/template7" id="newsTemplate">
+            <ul>
+                {{#each news}}
+                <li class="swipeout">
+                    <div class="swipeout-content">
+                        <a href="item.html?id={{id}}" data-contextName="news.{{@index}}" class="item-content item-link">
+                            <div class="item-media"><img src="{{photo}}" width="90" height="60"></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">{{title}}</div>
+                                    <!--<div class="item-after"><span class="badge">{{array_length kids}}</span></div>-->
+                                </div>
+                                <!--<div class="item-subtitle">{{domain}}</div>-->
+                                <!-- <div class="item-text">{{score}} points by {{by}} {{time_ago time}}</div>-->
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
 		<script type="text/template7" id="storiesTemplate">
 			<ul>
 			{{#each this}}
@@ -157,7 +240,7 @@
 		<script src="lib/moment.js"></script>
 		<script> window.moment = (typeof moment !== 'undefined') ? moment : require('moment');</script>
 		<script src="lib/framework7.js"></script>
-		<script src="js/hnapi.js"></script>
-		<script src="js/hn7.js"></script>
+		<script src="js/api.js"></script>
+		<script src="js/app.js"></script>
 	</body>
 </html>

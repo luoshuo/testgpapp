@@ -2,7 +2,8 @@
   'use strict';
   
   var urls = [
-      'http://www.yanglingtv.com/index.php/cms/api/'
+      'http://localhost/aiteoa/index.php/cms/api/'
+      //'http://www.yanglingtv.com/index.php/cms/api/'
   ];
   
   var req = function (path, success, error, retry) {
@@ -35,7 +36,11 @@
 		topStories: function (success, error) {
 			return req('top100', success, error);
 		},
-		
+
+      agris: function (success, error) {
+          return req('top100', success, error);
+      },
+
         maxItemID: function (success, error) {
 			return req('maxitem.json', success, error);
 		},

@@ -124,6 +124,51 @@
 		}
 		return results;
 	}
+
+
+    // Update data
+    function updateAgri(stories) {
+        app.template7Data.stories = stories;
+        $$('.page[data-page="index"] .page-content .list-block').html(T7.templates.storiesTemplate(stories));
+    }
+    // Fetch Stories
+    function getAgri(refresh) {
+        var results = refresh ? [] : JSON.parse(window.localStorage.getItem('stories')) || [];
+        if (results.length === 0) {
+            if (!refresh) app.showPreloader('更新信息 : <span class="preloader-progress">0</span> %');
+            var storiesCount = 0;
+            hnapi.agri(function (data) {
+                data = JSON.parse(data);
+                data.forEach(function(id, index) {
+                    hnapi.item(id, function(data) {
+                        data = JSON.parse(data);
+                        data.domain = (data.url) ? data.url.split('/')[2] : '';
+                        results[index] = data;
+                        storiesCount++;
+                        $$('.preloader-progress').text(Math.floor(storiesCount/100*100));
+                        if (results.length === 30) {
+                            if (!refresh) app.hidePreloader();
+                            // Update local storage data
+                            window.localStorage.setItem('stories', JSON.stringify(results));
+                            // PTR Done
+                            app.pullToRefreshDone();
+                            // reset .refresh-icon if necessary
+                            $$('.refresh-link.refresh-home').removeClass('refreshing');
+                            // Clear searchbar
+                            $$('.searchbar-input input')[0].value = '';
+                            // Update T7 data and render home page stories
+                            updateStories(results);
+                        }
+                    });
+                });
+            });
+        }
+        else {
+            // Update T7 data and render home page stories
+            updateStories(results);
+        }
+        return results;
+    }
 	
 	// Update stories on PTR
 	$$('.pull-to-refresh-content').on('refresh', function () {
