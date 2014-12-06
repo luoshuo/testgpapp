@@ -14,14 +14,55 @@
 		
 		<link rel="stylesheet" href="lib/framework7.css">
 		<link rel="stylesheet" href="css/app.css">
-	</head>
-	<body class="theme-orange">
+        <link rel="stylesheet" href="videojs/video-js.css">
+
+    </head>
+	<body >
 
         <div class="statusbar-overlay"></div>
         <div class="panel-overlay"></div>
         <div class="panel panel-left panel-reveal">
-            <div class="content-block">
-                <p>Left</p>
+            <div class="page-content">
+                <div class="list-block">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title"><a href="#index" class="tab-link active">头条</a></div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title"><a href="#news" class="tab-link">新闻</a></div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title"><a href="#agri" class="tab-link">农业</a></div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title"><a href="#huodong" class="tab-link">活动</a></div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title"><a href="#media" class="tab-link">视频</a></div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title"><a href="#life" class="tab-link">生活</a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="panel panel-right panel-cover">
@@ -33,6 +74,8 @@
             <div id="index" class="view view-main tab active">
                 <div class="navbar theme-white">
                     <div class="navbar-inner" data-page="index">
+                      <!--  <div class="left"><a href="#" class="open-panel">栏目</a></div>-->
+
                         <div class="center sliding">
                             <span class="mobile-title">杨凌视线</span>
                         </div>
@@ -40,6 +83,8 @@
                 </div>
                 <div class="pages navbar-through">
                     <div data-page="index" class="page">
+                            <!--category-->
+
                             <!-- Search bar -->
                             <!--<form class="searchbar" data-search-list=".list-block-search" data-search-in=".item-title" data-searchbar-found=".searchbar-found" data-searchbar-not-found=".searchbar-not-found">
                                     <div class="searchbar-input">
@@ -48,7 +93,17 @@
                                     </div>
                                     <a href="#" class="searchbar-cancel">取消</a>
                             </form>-->
-                            <div class="page-content "><!--pull-to-refresh-content-->
+                            <div class="page-content ">
+
+                                <div class="row topcategory">
+                                    <div class="col-20"><a href="news.html">新闻</a></div>
+                                    <div class="col-20"><a href="agri.html">农业</a></div>
+                                    <div class="col-20"><a href="huodong.html">活动</a></div>
+                                    <div class="col-20"><a href="media.html">视频</a></div>
+                                    <div class="col-20"><a href="life.html">生活</a></div>
+                                </div>
+
+                                <!--pull-to-refresh-content-->
                               <!--  <div class="pull-to-refresh-layer">
                                     <div class="preloader"></div>
                                     <div class="pull-to-refresh-arrow"></div>
@@ -62,34 +117,28 @@
                                     没有结果
                                 </div>
 
-                                <div class="list-block media-list topnews-list my-list list-block-search searchbar-found"></div>
+                                <div class="list-block media-list news-list my-list list-block-search searchbar-found"></div>
                             </div>
                     </div>
+
                 </div>
             </div>
-            <div id="news" class="view tab">
-                <div class="navbar theme-white">
-                    <div class="navbar-inner" data-page="index">
-                        <div class="center sliding">
-                            <span class="mobile-title">新闻</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="pages navbar-through">
-                    <div data-page="news" class="page">
-                        <div class="page-content">
-                            <div class="list-block media-list news-list my-list"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
+
             <!-- Second view (for second wrap)-->
+            <!--
             <div id="agri" class="view tab">
                 <div class="navbar theme-white">
                     <div class="navbar-inner" data-page="agri">
+                        <div class="left">
+                            <a href="#" class="link icon-only">
+                                <i class="icon icon-back"></i>
+                            </a>
+                        </div>
                         <div class="center sliding">
                             <span class="mobile-title">农业</span>
                         </div>
+                        <div class="right"><a href="#index" class="back" data-view=".view">首页</a></div>
                     </div>
                 </div>
                 <div class="pages navbar-through">
@@ -147,8 +196,9 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div>-->
             <!-- Bottom Tabbar-->
+            <!--
             <div class="toolbar tabbar tabbar-labels">
                 <div class="toolbar-inner">
                     <a href="#news" class="tab-link active"> <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label">新闻</span></a>
@@ -157,26 +207,29 @@
                     <a href="#media" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">视频</span></a>
                     <a href="#life" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">生活</span></a>
                 </div>
-            </div>
+            </div>-->
         </div>
 
 
 		
 		<!-- template7 templates -->
-        <script type="text/template7" id="newsTemplate">
+        <script type="text/template7" id="topnewsTemplate">
             <ul>
-                {{#each news}}
+                {{#each this}}
                 <li class="swipeout">
                     <div class="swipeout-content">
-                        <a href="item.html?id={{id}}" data-contextName="news.{{@index}}" class="item-content item-link">
-                            <div class="item-media"><img src="{{photo}}" width="90" height="60"></div>
+                        <a href="item.html?id={{id}}" data-contextName="topnews.{{@index}}" class="item-content item-link">
+                            <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
                             <div class="item-inner">
                                 <div class="item-title-row">
                                     <div class="item-title">{{title}}</div>
                                     <!--<div class="item-after"><span class="badge">{{array_length kids}}</span></div>-->
                                 </div>
-                                <!--<div class="item-subtitle">{{domain}}</div>-->
-                                <!-- <div class="item-text">{{score}} points by {{by}} {{time_ago time}}</div>-->
+                                {{#if hasmedia}}
+                                <div class="item-icon">
+                                    <i class="icon video-icon"></i>
+                                </div>
+                                {{/if}}
                             </div>
                         </a>
                     </div>
@@ -184,6 +237,122 @@
                 {{/each}}
             </ul>
         </script>
+        <script type="text/template7" id="newsTemplate">
+            <ul>
+                {{#each this}}
+                <li class="swipeout">
+                    <div class="swipeout-content">
+                        <a href="item.html?id={{id}}" data-contextName="news.{{@index}}" class="item-content item-link">
+                            <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">{{title}}</div>
+                                </div>
+                                {{#if hasmedia}}
+                                <div class="item-icon">
+                                    <i class="icon video-icon"></i>
+                                </div>
+                                {{/if}}
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+        <script type="text/template7" id="agriTemplate">
+            <ul>
+                {{#each this}}
+                <li class="swipeout">
+                    <div class="swipeout-content">
+                        <a href="item.html?id={{id}}" data-contextName="agri.{{@index}}" class="item-content item-link">
+                            <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">{{id}}{{title}}</div>
+                                </div>
+                                {{#if hasmedia}}
+                                <div class="item-icon">
+                                    <i class="icon video-icon"></i>
+                                </div>
+                                {{/if}}
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+        <script type="text/template7" id="huodongTemplate">
+            <ul>
+                {{#each this}}
+                <li class="swipeout">
+                    <div class="swipeout-content">
+                        <a href="item.html?id={{id}}" data-contextName="huodong.{{@index}}" class="item-content item-link">
+                            <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">{{id}}{{title}}</div>
+                                </div>
+                                {{#if hasmedia}}
+                                <div class="item-icon">
+                                    <i class="icon video-icon"></i>
+                                </div>
+                                {{/if}}
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+        <script type="text/template7" id="mediaTemplate">
+            <ul>
+                {{#each this}}
+                <li class="swipeout">
+                    <div class="swipeout-content">
+                        <a href="item.html?id={{id}}" data-contextName="media.{{@index}}" class="item-content item-link">
+                            <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">{{id}}{{title}}</div>
+                                </div>
+                                {{#if hasmedia}}
+                                <div class="item-icon">
+                                    <i class="icon video-icon"></i>
+                                </div>
+                                {{/if}}
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+        <script type="text/template7" id="lifeTemplate">
+            <ul>
+                {{#each this}}
+                <li class="swipeout">
+                    <div class="swipeout-content">
+                        <a href="item.html?id={{id}}" data-contextName="life.{{@index}}" class="item-content item-link">
+                            <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
+                            <div class="item-inner">
+                                <div class="item-title-row">
+                                    <div class="item-title">{{id}}{{title}}</div>
+                                </div>
+                                {{#if hasmedia}}
+                                <div class="item-icon">
+                                    <i class="icon video-icon"></i>
+                                </div>
+                                {{/if}}
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+        </script>
+
 		
 		<!-- libraries -->
 		<script src="lib/moment.js"></script>
@@ -191,5 +360,6 @@
 		<script src="lib/framework7.js"></script>
 		<script src="js/api.js"></script>
 		<script src="js/app.js"></script>
+        <script src="videojs/video.js"></script>
 	</body>
 </html>

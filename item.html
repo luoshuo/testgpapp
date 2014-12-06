@@ -1,28 +1,42 @@
 <div class="navbar">
-  <div class="navbar-inner">
-    <div class="left sliding">
-      <!-- Panel link for split view -->
-      <a href="#" class="open-panel link icon-only"> <i class="icon icon-bars"></i></a>
-      <!-- Back link for single view -->
-      <a href="#" class="back link"> <i class="icon icon-back"></i><span>返回</span></a>
+    <div class="navbar-inner">
+        <div class="left sliding">
+            <!-- <a href="#" class="open-panel link icon-only"> <i class="icon icon-bars"></i></a>-->
+            <a href="#" class="back link"> <i class="icon icon-back"></i><span>返回</span></a>
+        </div>
+        <div class="center sliding">{{title}}</div>
     </div>
-    <div class="center sliding">{{title}}</div>
-  </div>
 </div>
-<div class="pages">
-  <div class="page" data-page="item">
-    <div class="page-content">
-      <div class="story-header">
-        <div class="story-title">{{title}}</div>
-        <div class="story-info">阅读次数:{{visits}}　时间:{{pubtime}} </div>
+    <div class="page" data-page="item">
+        <div class="page-content">
+            <div class="content-block">
+                <div class="content-block-inner">
+                    <div class="news-header">
+                        <div class="news-title">{{title}}</div>
+                        <div class="news-info">{{pubtime}} 杨凌视线</div>
+                    </div>
+                    {{#if hasmedia}}
+                    <div class="news-video">
 
-      </div>
-			<div class="story-comments">
-        <div class="messages">
-            {{content}}
+                        <script>
+                            videojs.options.flash.swf = "videojs/video-js.swf"
+                        </script>
 
-        </div>   
-      </div>
+                        <video id="tv_video" class="video-js vjs-default-skin"
+                               controls autoplay preload="auto"  width="100%" height="75%"
+                               poster="img/video.png"
+                               data-setup='{"example_option":true}'>
+                            <source src="{{media}}" type='video/mp4' />
+                          <!--  <source src="<?php echo $addr; ?>.webm" type='video/webm' />
+                            <source src="<?php echo $addr; ?>.ogv" type='video/ogg' />-->
+                        </video>
+
+                    </div>
+                    {{/if}}
+                    <div class="news-body">
+                        {{content}}
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>

@@ -35,10 +35,42 @@
     });
 
 
+    $$(document).on('pageInit', function (e) {
+        var page = e.detail.page;
+
+        if (page.name === 'index') {
+            getTopNews();
+        }
+
+        if (page.name === 'news') {
+            getNews();
+        }
+
+        if (page.name === 'agri') {
+            getAgri();
+        }
+
+        if (page.name === 'huodong') {
+            getHuodong();
+        }
+
+        if (page.name === 'media') {
+            getMedia();
+        }
+
+        if (page.name === 'life') {
+            getLife();
+        }
+    });
+
+
+
+
+
     // 更新头条
     function updateTopNews(topnews) {
-        app.template7Data.news = topnews;
-        $$('.page[data-page="index"] .page-content .list-block').html(T7.templates.newsTemplate(topnews));
+        app.template7Data.topnews = topnews;
+        $$('.page[data-page="index"] .page-content .list-block').html(T7.templates.topnewsTemplate(topnews));
     }
     // 更新新闻
     function updateNews(news) {
@@ -47,23 +79,23 @@
     }
     // 更新农业
     function updateAgri(agri) {
-        app.template7Data.news = agri;
-        $$('.page[data-page="agri"] .page-content .agri-list').html(T7.templates.newsTemplate(agri));
+        app.template7Data.agri = agri;
+        $$('.page[data-page="agri"] .page-content .agri-list').html(T7.templates.agriTemplate(agri));
     }
     // 更新活动
     function updateHuodong(huodong) {
-        app.template7Data.news = huodong;
-        $$('.page[data-page="huodong"] .page-content .huodong-list').html(T7.templates.newsTemplate(huodong));
+        app.template7Data.huodong = huodong;
+        $$('.page[data-page="huodong"] .page-content .huodong-list').html(T7.templates.huodongTemplate(huodong));
     }
     // 更新视频
     function updateMedia(media) {
-        app.template7Data.news = media;
-        $$('.page[data-page="media"] .page-content .media-list').html(T7.templates.newsTemplate(media));
+        app.template7Data.media = media;
+        $$('.page[data-page="media"] .page-content .media-list').html(T7.templates.mediaTemplate(media));
     }
     // 更新生活
     function updateLife(life) {
-        app.template7Data.news = life;
-        $$('.page[data-page="life"] .page-content .life-list').html(T7.templates.newsTemplate(life));
+        app.template7Data.life = life;
+        $$('.page[data-page="life"] .page-content .life-list').html(T7.templates.lifeTemplate(life));
     }
 
     // 获取头条
@@ -92,6 +124,7 @@
     }
 
 
+    //TODO:测试成功后下一步将下面函数合并
 
     // 获取新闻
     function getNews(refresh) {
@@ -220,7 +253,7 @@
 
 
     //更新新闻栏目
-
+/*
     $$('#news').on('show', function () {
         getNews();
     });
@@ -236,7 +269,7 @@
     $$('#life').on('show', function () {
         getLife();
     });
-
+*/
 
 
     // app加载时候获取头条
