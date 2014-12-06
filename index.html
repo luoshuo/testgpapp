@@ -13,6 +13,7 @@
 		<title>杨凌视线</title>
 		
 		<link rel="stylesheet" href="lib/framework7.css">
+        <link rel="stylesheet" href="css/ionicons.css">
 		<link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" href="videojs/video-js.css">
 
@@ -28,37 +29,37 @@
                         <li class="item-content">
                             <div class="item-media"><i class="icon icon-f7"></i></div>
                             <div class="item-inner">
-                                <div class="item-title"><a href="#index" class="tab-link active">头条</a></div>
+                                <div class="item-title"><a href="index.html" >头条</a></div>
                             </div>
                         </li>
                         <li class="item-content">
                             <div class="item-media"><i class="icon icon-f7"></i></div>
                             <div class="item-inner">
-                                <div class="item-title"><a href="#news" class="tab-link">新闻</a></div>
+                                <div class="item-title"><a href="news.html" >新闻</a></div>
                             </div>
                         </li>
                         <li class="item-content">
                             <div class="item-media"><i class="icon icon-f7"></i></div>
                             <div class="item-inner">
-                                <div class="item-title"><a href="#agri" class="tab-link">农业</a></div>
+                                <div class="item-title"><a href="agri.html" >农业</a></div>
                             </div>
                         </li>
                         <li class="item-content">
                             <div class="item-media"><i class="icon icon-f7"></i></div>
                             <div class="item-inner">
-                                <div class="item-title"><a href="#huodong" class="tab-link">活动</a></div>
+                                <div class="item-title"><a href="huodong.html" >活动</a></div>
                             </div>
                         </li>
                         <li class="item-content">
                             <div class="item-media"><i class="icon icon-f7"></i></div>
                             <div class="item-inner">
-                                <div class="item-title"><a href="#media" class="tab-link">视频</a></div>
+                                <div class="item-title"><a href="media.html" >视频</a></div>
                             </div>
                         </li>
                         <li class="item-content">
                             <div class="item-media"><i class="icon icon-f7"></i></div>
                             <div class="item-inner">
-                                <div class="item-title"><a href="#life" class="tab-link">生活</a></div>
+                                <div class="item-title"><a href="life.html" >生活</a></div>
                             </div>
                         </li>
                     </ul>
@@ -74,147 +75,64 @@
             <div id="index" class="view view-main tab active">
                 <div class="navbar theme-white">
                     <div class="navbar-inner" data-page="index">
-                      <!--  <div class="left"><a href="#" class="open-panel">栏目</a></div>-->
-
+                       <div class="left"><a href="#" class="link icon-only open-panel"><i class="icon ion-ios-list"></i></a></div>
                         <div class="center sliding">
                             <span class="mobile-title">杨凌视线</span>
                         </div>
+
                     </div>
+
                 </div>
-                <div class="pages navbar-through">
+                <div class="pages navbar-through toolbar-through">
                     <div data-page="index" class="page">
-                            <!--category-->
-
-                            <!-- Search bar -->
-                            <!--<form class="searchbar" data-search-list=".list-block-search" data-search-in=".item-title" data-searchbar-found=".searchbar-found" data-searchbar-not-found=".searchbar-not-found">
-                                    <div class="searchbar-input">
-                                        <input type="search" placeholder="搜索">
-                                        <a href="#" class="searchbar-clear"></a>
-                                    </div>
-                                    <a href="#" class="searchbar-cancel">取消</a>
-                            </form>-->
-                            <div class="page-content ">
-
-                                <div class="row topcategory">
-                                    <div class="col-20"><a href="news.html">新闻</a></div>
-                                    <div class="col-20"><a href="agri.html">农业</a></div>
-                                    <div class="col-20"><a href="huodong.html">活动</a></div>
-                                    <div class="col-20"><a href="media.html">视频</a></div>
-                                    <div class="col-20"><a href="life.html">生活</a></div>
-                                </div>
-
-                                <!--pull-to-refresh-content-->
-                              <!--  <div class="pull-to-refresh-layer">
-                                    <div class="preloader"></div>
-                                    <div class="pull-to-refresh-arrow"></div>
-                                </div>-->
-
-                                <!-- Search bar overlay-->
-                                <div class="searchbar-overlay"></div>
-
-                                <!-- no result -->
-                                <div class="content-block searchbar-not-found">
-                                    没有结果
-                                </div>
-
-                                <div class="list-block media-list news-list my-list list-block-search searchbar-found"></div>
+                        <!--category-->
+                        <div class="page-content pull-to-refresh-content">
+                            <div class="pull-to-refresh-layer">
+                                <div class="preloader"></div>
+                                <div class="pull-to-refresh-arrow"></div>
                             </div>
-                    </div>
 
+                            <div class="list-block media-list news-list my-list">
+                                <div class="slider-container"></div>
+                                <ul></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="toolbar">
+                    <div class="row topcategory">
+                        <div class="col-20"><a href="news.html">新闻</a></div>
+                        <div class="col-20"><a href="agri.html">农业</a></div>
+                        <div class="col-20"><a href="huodong.html">活动</a></div>
+                        <div class="col-20"><a href="media.html">视频</a></div>
+                        <div class="col-20"><a href="life.html">生活</a></div>
+                    </div>
                 </div>
             </div>
 
-
-            <!-- Second view (for second wrap)-->
-            <!--
-            <div id="agri" class="view tab">
-                <div class="navbar theme-white">
-                    <div class="navbar-inner" data-page="agri">
-                        <div class="left">
-                            <a href="#" class="link icon-only">
-                                <i class="icon icon-back"></i>
-                            </a>
-                        </div>
-                        <div class="center sliding">
-                            <span class="mobile-title">农业</span>
-                        </div>
-                        <div class="right"><a href="#index" class="back" data-view=".view">首页</a></div>
-                    </div>
-                </div>
-                <div class="pages navbar-through">
-                    <div data-page="agri" class="page">
-                        <div class="page-content">
-                            <div class="list-block media-list agri-list my-list"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="huodong" class="view tab">
-                <div class="navbar theme-white">
-                    <div class="navbar-inner" data-page="about">
-                        <div class="center sliding">
-                            <span class="mobile-title">活动</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="pages navbar-through">
-                    <div data-page="huodong" class="page">
-                        <div class="page-content">
-                            <div class="list-block media-list huodong-list my-list"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="media" class="view tab">
-                <div class="navbar theme-white">
-                    <div class="navbar-inner" data-page="about">
-                        <div class="center sliding">
-                            <span class="mobile-title">视频</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="pages navbar-through">
-                    <div data-page="media" class="page">
-                        <div class="page-content">
-                            <div class="list-block media-list media-list my-list"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="life" class="view tab">
-                <div class="navbar theme-white">
-                    <div class="navbar-inner" data-page="about">
-                        <div class="center sliding">
-                            <span class="mobile-title">生活</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="pages navbar-through">
-                    <div data-page="life" class="page">
-                        <div class="page-content">
-                            <div class="list-block media-list life-list my-list"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-            <!-- Bottom Tabbar-->
-            <!--
-            <div class="toolbar tabbar tabbar-labels">
-                <div class="toolbar-inner">
-                    <a href="#news" class="tab-link active"> <i class="icon tabbar-demo-icon-1"></i><span class="tabbar-label">新闻</span></a>
-                    <a href="#agri" class="tab-link"><i class="icon tabbar-demo-icon-2"></i><span class="tabbar-label">农业</span></a>
-                    <a href="#huodong" class="tab-link"> <i class="icon tabbar-demo-icon-3"></i><span class="tabbar-label">活动</span></a>
-                    <a href="#media" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">视频</span></a>
-                    <a href="#life" class="tab-link"> <i class="icon tabbar-demo-icon-4"></i><span class="tabbar-label">生活</span></a>
-                </div>
-            </div>-->
         </div>
 
 
 		
 		<!-- template7 templates -->
+        <script type="text/template7" id="toppptTemplate">
+
+                <div class="slider-pagination"></div>
+                <div class="slider-wrapper">
+                    {{#each this}}
+                    <div class="slider-slide">
+                       <a href="item.html?id={{id}}" data-contextName="topppt.{{@index}}" >
+                            <img src="{{photo}}">
+                        </a>
+                    </div>
+                    {{/each}}
+                </div>
+                <a href="#" class="slider-prev-button"><i class="icon icon-prev-blue"></i></a>
+                <a href="#" class="slider-next-button"><i class="icon icon-next-blue"></i></a>
+
+        </script>
         <script type="text/template7" id="topnewsTemplate">
-            <ul>
+
                 {{#each this}}
                 <li class="swipeout">
                     <div class="swipeout-content">
@@ -235,7 +153,7 @@
                     </div>
                 </li>
                 {{/each}}
-            </ul>
+
         </script>
         <script type="text/template7" id="newsTemplate">
             <ul>

@@ -5,7 +5,7 @@
     'use strict';
 
     var urls = [
-        //'http://localhost/aiteoa/index.php/cms/api/'
+       // 'http://localhost/aiteoa/index.php/cms/api/'
         'http://www.yanglingtv.com/index.php/cms/api/'
     ];
 
@@ -27,6 +27,10 @@
     var myapi = {
 
         urls: urls,
+
+        topppt: function (success, error) {
+            return req('topppt', success, error);
+        },
 
         topnews: function (success, error) {
             return req('topnews', success, error);

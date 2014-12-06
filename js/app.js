@@ -39,6 +39,7 @@
         var page = e.detail.page;
 
         if (page.name === 'index') {
+            getTopPpt();
             getTopNews();
         }
 
@@ -63,14 +64,27 @@
         }
     });
 
-
+    var mySlider = app.slider('.slider-container', {
+        pagination:'.slider-pagination',
+        paginationHide: false,
+        nextButton: '.slider-next-button',
+        prevButton: '.slider-prev-button',
+        indexButton: '.slider-pagination-bullet',
+        speed: 400,
+        spaceBetween: 100
+    });
 
 
 
     // 更新头条
     function updateTopNews(topnews) {
         app.template7Data.topnews = topnews;
-        $$('.page[data-page="index"] .page-content .list-block').html(T7.templates.topnewsTemplate(topnews));
+        $$('.page[data-page="index"] .page-content .list-block ul').html(T7.templates.topnewsTemplate(topnews));
+    }
+    // 更新头条ppt
+    function updateTopPpt(topppt) {
+        app.template7Data.topppt = topppt;
+        $$('.page[data-page="index"] .page-content .list-block .slider-container').html(T7.templates.toppptTemplate(topppt));
     }
     // 更新新闻
     function updateNews(news) {
@@ -119,6 +133,31 @@
         }
         else {
             updateTopNews(results);
+        }
+        return results;
+    }
+
+    // 获取头条ppt
+    function getTopPpt(refresh) {
+        var results = refresh ? [] : JSON.parse(window.localStorage.getItem('topppt')) || [];
+        if (results.length === 0) {
+            app.showPreloader('信息更新');
+            myapi.topppt(function (data) {
+                data = JSON.parse(data);
+                results = data;
+                window.localStorage.setItem('topppt', JSON.stringify(results));
+                // PTR Done
+                app.pullToRefreshDone();
+
+                updateTopPpt(results);
+
+                app.hidePreloader();
+
+            });
+
+        }
+        else {
+            updateTopPpt(results);
         }
         return results;
     }
@@ -273,6 +312,7 @@
 
 
     // app加载时候获取头条
+    getTopPpt();
     getTopNews();
 
     // 导出app到全局
