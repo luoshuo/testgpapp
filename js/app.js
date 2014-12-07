@@ -21,6 +21,8 @@
         animateNavBackIcon: true,
         precompileTemplates: true,
         template7Pages: true,
+        hideNavbarOnPageScroll:false,
+        hideToolbarOnPageScroll:true,
         externalLinks: 'a.external, .message a',
         router: true
     });
@@ -29,9 +31,10 @@
     var mainView = app.addView('.view-main', {
         dynamicNavbar: true,
         animatePages: false,
-        swipeBackPage: false,
-        reloadPages: true,
-        preloadPreviousPage: false
+        swipeBackPage: true,
+        reloadPages: false,
+        preloadPreviousPage: true
+       // domCache:true
     });
 
 
@@ -64,15 +67,7 @@
         }
     });
 
-    var mySlider = app.slider('.slider-container', {
-        pagination:'.slider-pagination',
-        paginationHide: false,
-        nextButton: '.slider-next-button',
-        prevButton: '.slider-prev-button',
-        indexButton: '.slider-pagination-bullet',
-        speed: 400,
-        spaceBetween: 100
-    });
+
 
 
 
@@ -314,6 +309,16 @@
     // app加载时候获取头条
     getTopPpt();
     getTopNews();
+
+    var mySlider = app.slider('.slider-container', {
+        pagination:'.slider-pagination',
+        paginationHide: false,
+        nextButton: '.slider-next-button',
+        prevButton: '.slider-prev-button',
+        indexButton: '.slider-pagination-bullet',
+        speed: 400,
+    });
+
 
     // 导出app到全局
     window.app = app;

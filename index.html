@@ -23,48 +23,52 @@
         <div class="statusbar-overlay"></div>
         <div class="panel-overlay"></div>
         <div class="panel panel-left panel-reveal">
-            <div class="page-content">
+            <img src="img/bg.jpg" class="blur"/>
+            <div class="page-content panel-left-menu">
+
                 <div class="list-block">
                     <ul>
                         <li class="item-content">
-                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-media"><i class="icon icon-topnews"></i></div>
                             <div class="item-inner">
                                 <div class="item-title"><a href="index.html" >头条</a></div>
                             </div>
                         </li>
                         <li class="item-content">
-                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-media"><i class="icon icon-news"></i></div>
                             <div class="item-inner">
                                 <div class="item-title"><a href="news.html" >新闻</a></div>
                             </div>
                         </li>
                         <li class="item-content">
-                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-media"><i class="icon icon-agri"></i></div>
                             <div class="item-inner">
                                 <div class="item-title"><a href="agri.html" >农业</a></div>
                             </div>
                         </li>
                         <li class="item-content">
-                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-media"><i class="icon icon-huodong"></i></div>
                             <div class="item-inner">
                                 <div class="item-title"><a href="huodong.html" >活动</a></div>
                             </div>
                         </li>
                         <li class="item-content">
-                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-media"><i class="icon icon-media"></i></div>
                             <div class="item-inner">
                                 <div class="item-title"><a href="media.html" >视频</a></div>
                             </div>
                         </li>
                         <li class="item-content">
-                            <div class="item-media"><i class="icon icon-f7"></i></div>
+                            <div class="item-media"><i class="icon icon-life"></i></div>
                             <div class="item-inner">
                                 <div class="item-title"><a href="life.html" >生活</a></div>
                             </div>
                         </li>
                     </ul>
                 </div>
+                <img src="img/logo.png" class="logo"/>
             </div>
+
         </div>
         <div class="panel panel-right panel-cover">
             <div class="content-block">
@@ -75,7 +79,7 @@
             <div id="index" class="view view-main tab active">
                 <div class="navbar theme-white">
                     <div class="navbar-inner" data-page="index">
-                       <div class="left"><a href="#" class="link icon-only open-panel"><i class="icon ion-ios-list"></i></a></div>
+                       <div class="left"><a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a></div>
                         <div class="center sliding">
                             <span class="mobile-title">杨凌视线</span>
                         </div>
@@ -117,13 +121,12 @@
 		<!-- template7 templates -->
         <script type="text/template7" id="toppptTemplate">
 
-                <div class="slider-pagination"></div>
+
                 <div class="slider-wrapper">
                     {{#each this}}
                     <div class="slider-slide">
-                       <a href="item.html?id={{id}}" data-contextName="topppt.{{@index}}" >
-                            <img src="{{photo}}">
-                        </a>
+                       <a href="item.html?id={{id}}" data-contextName="topppt.{{@index}}" ><div class="item-title-pagination"><span class="item-title">{{title}}</span></div><img src="{{photo}}"/></a>
+                        <span class="slider-pagination"></span>
                     </div>
                     {{/each}}
                 </div>
@@ -145,7 +148,7 @@
                                 </div>
                                 {{#if hasmedia}}
                                 <div class="item-icon">
-                                    <i class="icon video-icon"></i>
+                                    <i class="icon icon-video"></i>
                                 </div>
                                 {{/if}}
                             </div>
@@ -187,7 +190,7 @@
                             <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
                             <div class="item-inner">
                                 <div class="item-title-row">
-                                    <div class="item-title">{{id}}{{title}}</div>
+                                    <div class="item-title">{{title}}</div>
                                 </div>
                                 {{#if hasmedia}}
                                 <div class="item-icon">
@@ -210,7 +213,7 @@
                             <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
                             <div class="item-inner">
                                 <div class="item-title-row">
-                                    <div class="item-title">{{id}}{{title}}</div>
+                                    <div class="item-title">{{title}}</div>
                                 </div>
                                 {{#if hasmedia}}
                                 <div class="item-icon">
@@ -233,7 +236,7 @@
                             <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
                             <div class="item-inner">
                                 <div class="item-title-row">
-                                    <div class="item-title">{{id}}{{title}}</div>
+                                    <div class="item-title">{{title}}</div>
                                 </div>
                                 {{#if hasmedia}}
                                 <div class="item-icon">
@@ -256,7 +259,7 @@
                             <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>
                             <div class="item-inner">
                                 <div class="item-title-row">
-                                    <div class="item-title">{{id}}{{title}}</div>
+                                    <div class="item-title">{{title}}</div>
                                 </div>
                                 {{#if hasmedia}}
                                 <div class="item-icon">

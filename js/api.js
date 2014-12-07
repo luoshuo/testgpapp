@@ -5,8 +5,8 @@
     'use strict';
 
     var urls = [
-       // 'http://localhost/aiteoa/index.php/cms/api/'
-        'http://www.yanglingtv.com/index.php/cms/api/'
+        'http://localhost/aiteoa/index.php/cms/api/'
+        //'http://www.yanglingtv.com/index.php/cms/api/'
     ];
 
     var req = function (path, success, error, retry) {
