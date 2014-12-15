@@ -308,3 +308,12 @@ i.icon.icon-life{
     height:29px;
     background-image: url("../img/i-life.png");
 }
+
+.infinite-scroll-preloader {
+    margin-top:20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.infinite-scroll-preloader .preloader {
+
+}

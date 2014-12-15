@@ -79,7 +79,7 @@
             <div id="index" class="view view-main tab active">
                 <div class="navbar theme-white">
                     <div class="navbar-inner" data-page="index">
-                       <div class="left"><a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a></div>
+                      <!-- <div class="left"><a href="#" class="link icon-only open-panel"><i class="icon icon-bars"></i></a></div>-->
                         <div class="center sliding">
                             <span class="mobile-title">杨凌视线</span>
                         </div>
@@ -90,7 +90,7 @@
                 <div class="pages navbar-through toolbar-through">
                     <div data-page="index" class="page">
                         <!--category-->
-                        <div class="page-content pull-to-refresh-content">
+                        <div class="page-content pull-to-refresh-content infinite-scroll">
                             <div class="pull-to-refresh-layer">
                                 <div class="preloader"></div>
                                 <div class="pull-to-refresh-arrow"></div>
@@ -99,6 +99,10 @@
                             <div class="list-block media-list news-list my-list">
                                 <div class="slider-container"></div>
                                 <ul></ul>
+                            </div>
+
+                            <div class="infinite-scroll-preloader">
+                                <div class="preloader"></div>
                             </div>
                         </div>
                     </div>
@@ -118,7 +122,6 @@
 
 
 		
-		<!-- template7 templates -->
         <script type="text/template7" id="toppptTemplate">
 
 
@@ -137,7 +140,7 @@
         <script type="text/template7" id="topnewsTemplate">
 
                 {{#each this}}
-                <li class="swipeout">
+                <li class="swipeout" contentid="{{id}}" >
                     <div class="swipeout-content">
                         <a href="item.html?id={{id}}" data-contextName="topnews.{{@index}}" class="item-content item-link">
                             <div class="item-media"><img src="{{photo}}" width="80" height="60"></div>

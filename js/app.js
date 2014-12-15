@@ -22,7 +22,7 @@
         precompileTemplates: true,
         template7Pages: true,
         hideNavbarOnPageScroll:false,
-        hideToolbarOnPageScroll:true,
+        hideToolbarOnPageScroll:false,
         externalLinks: 'a.external, .message a',
         router: true
     });
@@ -111,7 +111,7 @@
     function getTopNews(refresh) {
         var results = refresh ? [] : JSON.parse(window.localStorage.getItem('topnews')) || [];
         if (results.length === 0) {
-            app.showPreloader('信息更新');
+           // app.showPreloader('信息更新');
             myapi.topnews(function (data) {
                 data = JSON.parse(data);
                 results = data;
@@ -121,7 +121,7 @@
 
                 updateTopNews(results);
 
-                app.hidePreloader();
+              //  app.hidePreloader();
 
             });
 
@@ -136,7 +136,7 @@
     function getTopPpt(refresh) {
         var results = refresh ? [] : JSON.parse(window.localStorage.getItem('topppt')) || [];
         if (results.length === 0) {
-            app.showPreloader('信息更新');
+            //app.showPreloader('信息更新');
             myapi.topppt(function (data) {
                 data = JSON.parse(data);
                 results = data;
@@ -146,7 +146,7 @@
 
                 updateTopPpt(results);
 
-                app.hidePreloader();
+                //app.hidePreloader();
 
             });
 
@@ -164,7 +164,7 @@
     function getNews(refresh) {
         var results = refresh ? [] : JSON.parse(window.localStorage.getItem('news')) || [];
         if (results.length === 0) {
-            app.showPreloader('信息更新');
+           // app.showPreloader('信息更新');
             myapi.news(function (data) {
                 data = JSON.parse(data);
                 results = data;
@@ -174,7 +174,7 @@
 
                 updateNews(results);
 
-                app.hidePreloader();
+               // app.hidePreloader();
 
             });
 
@@ -189,7 +189,7 @@
     function getAgri(refresh) {
         var results = refresh ? [] : JSON.parse(window.localStorage.getItem('agri')) || [];
         if (results.length === 0) {
-            app.showPreloader('信息更新');
+            //app.showPreloader('信息更新');
             myapi.agri(function (data) {
                 data = JSON.parse(data);
                 results = data;
@@ -199,7 +199,7 @@
 
                 updateAgri(results);
 
-                app.hidePreloader();
+              //  app.hidePreloader();
 
             });
 
@@ -214,7 +214,7 @@
     function getHuodong(refresh) {
         var results = refresh ? [] : JSON.parse(window.localStorage.getItem('huodong')) || [];
         if (results.length === 0) {
-            app.showPreloader('信息更新');
+          //  app.showPreloader('信息更新');
             myapi.huodong(function (data) {
                 data = JSON.parse(data);
                 results = data;
@@ -224,7 +224,7 @@
 
                 updateHuodong(results);
 
-                app.hidePreloader();
+               // app.hidePreloader();
 
             });
 
@@ -239,7 +239,7 @@
     function getMedia(refresh) {
         var results = refresh ? [] : JSON.parse(window.localStorage.getItem('media')) || [];
         if (results.length === 0) {
-            app.showPreloader('信息更新');
+          //  app.showPreloader('信息更新');
             myapi.media(function (data) {
                 data = JSON.parse(data);
                 results = data;
@@ -249,7 +249,7 @@
 
                 updateMedia(results);
 
-                app.hidePreloader();
+               // app.hidePreloader();
 
             });
 
@@ -264,7 +264,7 @@
     function getLife(refresh) {
         var results = refresh ? [] : JSON.parse(window.localStorage.getItem('life')) || [];
         if (results.length === 0) {
-            app.showPreloader('信息更新');
+            //app.showPreloader('信息更新');
             myapi.life(function (data) {
                 data = JSON.parse(data);
                 results = data;
@@ -274,7 +274,7 @@
 
                 updateLife(results);
 
-                app.hidePreloader();
+              //  app.hidePreloader();
 
             });
 
@@ -283,6 +283,21 @@
             updateLife(results);
         }
         return results;
+    }
+
+
+    function removeQT(refresh) {
+
+        window.localStorage.removeItem('news');
+        window.localStorage.removeItem('agri');
+        window.localStorage.removeItem('huodong');
+        window.localStorage.removeItem('media');
+        window.localStorage.removeItem('life');
+
+       // window.localStorage.removeItem('topnews');
+
+        //window.localStorage.removeItem('topppt');
+
     }
 
 
@@ -318,6 +333,219 @@
         indexButton: '.slider-pagination-bullet',
         speed: 400,
     });
+
+
+  //  var ptrCon = $$('.view-main[data-page="huodong"]');
+
+
+  //  app.pullToRefreshTrigger(ptrCon);
+
+
+    // 下拉刷新页面
+    var ptrContent = $$('.pull-to-refresh-content');
+
+    // 添加'refresh'监听器
+    ptrContent.on('refresh', function (e) {
+
+      //  alert('test');
+        // 模拟2s的加载过程
+
+        removeQT();
+        getTopPpt();
+        getTopNews();
+
+
+
+        setTimeout(function () {
+
+
+
+
+           // console.log($$('.view-main')[0].f7View);
+
+           // alert(mainView.activePage);
+
+            /*$$(document).on('pageInit', function (e) {
+
+                var page = e.detail.page;
+
+                if (page.name === 'index') {
+                    getTopPpt();
+                    getTopNews();
+                }
+
+                if (page.name === 'news') {
+                    getNews();
+                }
+
+                if (page.name === 'agri') {
+                    getAgri();
+                }
+
+                if (page.name === 'huodong') {
+                    getHuodong();
+                }
+
+                if (page.name === 'media') {
+                    getMedia();
+                }
+
+                if (page.name === 'life') {
+                    getLife();
+                }
+
+            })*/
+
+
+
+            app.pullToRefreshDone();
+        }, 2000);
+    });
+
+
+
+
+
+
+    /*
+            var loading = false;
+
+            var lastIndex = $$('.my-list ul li.swipeout').length;
+
+           // var str = $$('.my-list ul li')[lastIndex - 1] + '';
+            var jsonstr;
+
+            //TODO:此处需要获取最后一行a中contentid值
+
+
+        function extend(des, a, b){
+
+
+
+            return des;
+        }
+
+
+
+
+
+            // 最多可加载的条目
+            var maxItems = 100;
+
+            // 每次加载添加多少条目
+            var itemsPerLoad = 10;
+
+
+            $$('.infinite-scroll').on('infinite', function () {
+
+                // 如果正在加载，则退出
+                if (loading) return;
+
+                // 设置flag
+                loading = true;
+
+                // 模拟1s的加载过程
+                setTimeout(function () {
+                    // 重置加载flag
+                    loading = false;
+
+                    if (lastIndex >= maxItems) {
+                        // 加载完毕，则注销无限加载事件，以防不必要的加载
+                        myApp.detachInfiniteScroll($$('.infinite-scroll'));
+                        // 删除加载提示符
+                        $$('.infinite-scroll-preloader').remove();
+                        return;
+                    }
+
+                    var c;
+                    var minid = 422;
+                    var results = [];
+                    var a;
+                    var b;
+                    var src = [];
+                    myapi.n(minid, function (data) {
+                        data = JSON.parse(data);
+                        results = data;
+
+                        b = JSON.stringify(results);
+
+                        src = window.localStorage.getItem('nx');
+
+
+
+                        if(src){
+                            a = JSON.stringify(JSON.parse(src));
+                        }
+
+
+
+                      //  var a = window.localStorage.getItem('nx');
+
+
+                       // var b = data;
+
+
+                        c = a.substr(0,a.length -1) + ',' + b.substr(1);
+
+                        console.log(c);
+
+
+
+
+                        window.localStorage.setItem('nx', c);
+
+                       // window.localStorage.setItem('nx', JSON.stringify(results));
+
+                    });
+
+
+
+                    jsonstr = JSON.parse(c);
+
+                    //jsonstr = JSON.parse(window.localStorage.getItem('nx'));
+
+                    // 生成新条目的HTML
+                    var html = '';
+                    for (var i = 0; i < jsonstr.length; i++) {
+
+                        var index = lastIndex + i + 1;
+
+                        html += '<li class="swipeout">' +
+                        '<div class="swipeout-content">' +
+                        '<a href="item.html?id=' + jsonstr[i].id + '" data-contextName="topnews.' + index + '" class="item-content item-link">' +
+                        '<div class="item-media"><img src="' + jsonstr[i].photo + '" width="80" height="60"></div>' +
+                        '<div class="item-inner">' +
+                        ' <div class="item-title-row">' +
+                        ' <div class="item-title">' + jsonstr[i].title + '</div>' +
+                        ' </div>';
+
+                        if (jsonstr[i].hasmedia) {
+
+                            html += '<div class="item-icon"> <i class="icon icon-video"></i></div>';
+                        }
+
+
+                        html += '</div></a></div></li>';
+
+
+                    }
+
+                    // 添加新条目
+                    $$('.list-block ul').append(html);
+
+                    // 更新最后加载的序号
+                    lastIndex = $$('.my-list ul li.swipeout').length;
+                }, 1000);
+            });
+
+
+
+    */
+
+
+
+
+
 
 
     // 导出app到全局

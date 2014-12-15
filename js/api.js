@@ -49,7 +49,13 @@
         },
         life: function (success, error) {
             return req('life', success, error);
+        },
+        n: function (id,success, error) {
+            return req('topnews/minid/'+id, success, error);
         }
+        /*n: function (id,category,success, error) {
+            return req('n/c/' + category + '/m/'+id, success, error);
+        }*/
     };
 
     window.myapi = myapi;
