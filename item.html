@@ -20,15 +20,21 @@
                     <div class="news-video">
 
                         <script>
-                            videojs.options.flash.swf = "videojs/video-js.swf"
+                        VideoPlayer.play("{{media}}");
                         </script>
+                        <!--<script>
+                         //   videojs.options.flash.swf = "videojs/video-js.swf"
+                        </script>-->
 
+<!--
                         <video id="tv_video" class="video-js vjs-default-skin"
                                controls autoplay preload="auto" >
-                            <source src="{{media}}" type='video/mp4' />
-                          <!--  <source src="<?php echo $addr; ?>.webm" type='video/webm' />
-                            <source src="<?php echo $addr; ?>.ogv" type='video/ogg' />-->
-                        </video>
+
+                            <source src="{{media}}.ogv" type='video/ogg' />
+                            <source src="{{media}}.mp4" type='video/mp4' />
+                            <source src="<?php echo $addr; ?>.webm" type='video/webm' />
+                            <source src="<?php echo $addr; ?>.ogv" type='video/ogg' />
+                        </video>-->
 
                     </div>
                     {{/if}}
