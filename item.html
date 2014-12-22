@@ -19,9 +19,19 @@
                     {{#if hasmedia}}
                     <div class="news-video">
 
+
+
+
                         <script>
-                        VideoPlayer.play("{{media}}");
+                            VideoPlayer.play("{{media}}");
                         </script>
+
+
+                        <video controls="controls"  preload="preload" height="240" width="320" >
+                            <source src="{{media}}.mp4" type='video/mp4' />
+                        </video>
+
+
                         <!--<script>
                          //   videojs.options.flash.swf = "videojs/video-js.swf"
                         </script>-->
