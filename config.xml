@@ -50,7 +50,8 @@
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 
     <!-- Plugins can also be added here. -->
-    <gap:plugin name="com.yanglingtv.app.VPlayer" />
+    <!--<gap:plugin name="com.yanglingtv.app.VPlayer" />-->
+    <gap:plugin name="com.dawsonloudon.videoplayer" version="1.0.0" />
     <!--
 
         A list of available plugins are available at https://build.phonegap.com/docs/plugins

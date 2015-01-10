@@ -22,15 +22,15 @@
 
 
                         <script>
-                            window.plugins.vplayer.show({ videopath: "{{media}}" },{},{});
+                            VideoPlayer.play("{{media}}");
                         </script>
 
                         <hr>
 
 
-                        <video controls="controls"  preload="preload" height="240" width="320" >
+                       <!-- <video controls="controls"  preload="preload" height="240" width="320" >
                             <source src="{{media}}.mp4" type='video/mp4' />
-                        </video>
+                        </video>-->
 
 
                         <!--<script>

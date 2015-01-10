@@ -5,9 +5,10 @@
     'use strict';
 
     var urls = [
+        //'http://192.168.1.110/aiteoa/index.php/cms/api/'
        // 'http://localhost/aiteoa/index.php/cms/api/'
        'http://www.yanglingtv.com/index.php/cms/api/'
-    ];
+    ], req, myapi;;
 
     var req = function (path, success, error, retry) {
         retry = retry || 0;
